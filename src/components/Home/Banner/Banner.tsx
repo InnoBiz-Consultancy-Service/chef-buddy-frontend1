@@ -34,8 +34,10 @@ const Banner = () => {
         <div className='w-[365px] height-[126px] top-[194px] left-[38px]'>
 
         </div>
-   <h1 className="text-white text-[32px] md:text-[54px] lg:text-[72px] font-extrabold leading-[1.1] max-w-[950px]">
-  Private Chef Services for Elevated At-Home Dining
+   <h1 className="text-white py-6 lg:py-0 text-[32px] md:text-[54px] lg:text-[72px] font-extrabold leading-[1.1] max-w-[950px]">
+  Private Chef Services for <span className='block lg:inline'>Elevated</span> <span >
+    At-Home Dining
+  </span>
 </h1>
 
 {/* Subtitle */}
@@ -65,63 +67,40 @@ const Banner = () => {
 </button>
 
         {/* Bottom Features: Responsive Icons */}
-        <div className="lg:absolute lg:bottom-16 mt-0 md:mt-16 lg:mt-0 w-full max-w-[1200px] flex flex-wrap justify-center lg:justify-between items-center gap-8 lg:gap-0">
+        <div className="lg:absolute lg:bottom-16 mt-0 md:mt-16 lg:mt-0 w-full max-w-[1200px] flex flex-wrap justify-center lg:justify-between items-center gap-8 lg:gap-0 mt-12">
           
          
-
+<div className="flex flex-col items-center text-center">
+    <div className="w-14 h-14 mb-3 flex items-center justify-center rounded-full bg-[#F7931E]">
+      <Image src={fresh} alt="Fresh Ingredients" width={26} height={26} />
+    </div>
+    <span className="text-white font-semibold text-[14px] lg:text-[18px]">
+      Fresh Ingredients
+    </span>
+  </div>
          
-          <div className="flex flex-col items-center group">
-            <div className="w-14 h-14 mb-3 flex items-center justify-center mt-80 md:mt-0">
-            
-                 <Image
-              src={fresh}
-          alt="Private Chef Services"
-           width={52}
-           height={47}
-          
-          className="object-cover bg-[#F7931E]"
-          priority
-              />
-            
-            </div>
-            <span className="text-white font-semibold text-sm lg:text-[18px]">Fresh Ingredients</span>
-          </div>
+          <div className="flex flex-col items-center text-center">
+    <div className="w-14 h-14 mb-3 flex items-center justify-center rounded-full bg-[#F7931E] mt-48  md:mt-0">
+      <Image src={menu} alt="Personalized Menus" width={26} height={26} />
+    </div>
+    <span className="text-white font-semibold text-[14px] lg:text-[18px]">
+      Personalized Menus
+    </span>
+  </div>
+  
 
-          {/* Item 2 */}
-          <div className="flex flex-col items-center group">
-            <div className="w-14 h-14 mb-3 flex items-center justify-center mt-20 md:mt-0">
-              
-                    <Image
-              src={menu}
-          alt="Private Chef Services"
-           width={52}
-           height={47}
+       
           
-          className="object-cover bg-[#F7931E]"
-          priority
-              />
-            
-            </div>
-            <span className="text-white font-semibold text-sm lg:text-[18px]">Personalized Menus</span>
-          </div>
 
           {/* Item 3 */}
-          <div className="flex flex-col items-center group">
-            <div className="w-14 h-14 mb-3 flex items-center justify-center mt-80 md:mt-0">
-              
-                 <Image
-              src={makeHome}
-          alt="Private Chef Services"
-           width={52}
-           height={47}
-          
-          className="object-cover bg-[#F7931E]"
-          priority
-              />
-           
-            </div>
-            <span className="text-white font-semibold text-sm lg:text-[18px]">Chef-Prepared at Home</span>
-          </div>
+  <div className="flex flex-col items-center text-center">
+    <div className="w-14 h-14 mb-3 flex items-center justify-center rounded-full bg-[#F7931E]">
+      <Image src={makeHome} alt="Chef at Home" width={26} height={26} />
+    </div>
+    <span className="text-white font-semibold text-[14px] lg:text-[18px]">
+      Chef-Prepared at Home
+    </span>
+  </div>
 
         </div>
       </div>
