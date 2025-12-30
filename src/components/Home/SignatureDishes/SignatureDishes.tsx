@@ -7,6 +7,13 @@ import kebab from "../../../assets/images/si_circle1.jpg";
 import rice from "../../../assets/images/si_circle2.jpg";
 import dessert from "../../../assets/images/si_circle3.jpg";
 import vegan from "../../../assets/images/si_circle4.jpg";
+//dish images
+import mutton from "../../../assets/images/Mutton_si.jpg";
+import tikka from "../../../assets/images/Chikken_tikka.jpg";
+import poneer from "../../../assets/images/Poneer_tikka.jpg";
+import dal from "../../../assets/images/Spicy_dal.jpg";
+import lamb from "../../../assets/images/Spicy_lamb.jpg";
+import butter from "../../../assets/images/Butter_chicken.jpg";
 
 const categories = [
   { name: "Curries & Mains", icon: curry },
@@ -48,39 +55,49 @@ export default function Signature() {
       </div>
 
       {/* Grid - Gap overlap thik korar jonno auto-rows-min bebohar kora hoyeche */}
-      <div className="grid gap-6 md:gap-8 grid-cols-2 lg:grid-cols-3 max-w-[1416px] mx-auto auto-rows-auto">
+      <div className="grid gap-3 md:gap-8 grid-cols-2 lg:grid-cols-3 max-w-[1416px] mx-auto auto-rows-auto">
         
         {/* Dish 1 - Left Column: Large */}
-       <div className="relative rounded-2xl overflow-hidden group h-[300px] lg:h-[456px] lg:row-span-2 w-full lg:w-[464px]">
-  {/* Image */}
+   
+<div className="relative rounded-2xl overflow-hidden group h-[200px] lg:h-[456px] lg:row-span-2 w-full max-w-[464px]">
+  {/* Main Image */}
   <Image 
-    src="/images/dishes/mutton.jpg" 
+    src={mutton}
     alt="Mutton Leg Roast" 
     fill 
     className="object-cover transition-transform duration-700 group-hover:scale-110" 
   />
 
-  {/* Overlay - Optional, if you want a slight dark tint overall */}
+  {/* Image Overlay (Dark tint) */}
   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-all duration-500" />
 
-  {/* Bottom Content Box (As per your reference image) */}
-  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-black/60 backdrop-blur-md rounded-[32px] p-6 text-center text-white transition-all duration-500 group-hover:bg-black/75">
-    
-    <h3 className="text-xl md:text-2xl font-semibold mb-2">
+  {/* Content Box - Mobile and Large Screen Responsive */}
+  <div 
+    className="absolute bottom-4 lg:bottom-6 left-1/2 -translate-x-1/2 
+               /* Mobile Spec: 176x160px */
+               w-[176px] h-[160px] p-[12px_24px] rounded-[24px]
+               /* Desktop Spec: 327x141px */
+               md:w-[327px] md:h-[141px] md:rounded-[50px] md:p-6
+               
+               bg-[#1D1D1D]/70 backdrop-blur-md flex flex-col items-center justify-center 
+               text-center text-white transition-all duration-500 group-hover:bg-black/75 
+               shadow-[0_32px_40px_rgba(0,0,0,0.1)]"
+  >
+    {/* Title */}
+    <h3 className="text-lg md:text-[24px] font-semibold mb-1 md:mb-2 leading-tight">
       Mutton Leg Roast
     </h3>
     
-    <p className="text-sm md:text-base text-gray-200 leading-relaxed line-clamp-2">
-      Slow-cooked in yogurt, mango chutney and herbs with bold spices.
+    {/* Description - Spec: Nunito Sans, 12px, 17px line height */}
+    <p className="font-['Nunito_Sans'] text-[12px] md:text-[14px] text-gray-200 leading-[17px] line-clamp-3 md:line-clamp-2">
+      Tikka chicken cooked in yoghurt, mango chutney, tomato paste, herbs and selected spices.
     </p>
-
-    
   </div>
 </div>
 
         {/* Dish 2 - Middle Column: Small */}
-        <div className="relative rounded-2xl overflow-hidden group  h-[180px] lg:h-[270px] w-[192px] lg:w-[464px]">
-          <Image src="/images/dishes/tikka.jpg" alt="Chicken" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+        <div className="relative rounded-2xl overflow-hidden group  h-[188px] lg:h-[270px] w-full lg:w-[464px]">
+          <Image src={tikka} alt="Chicken" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
          
        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[327px] h-[141px] bg-black/50 backdrop-blur-lg rounded-[50px] flex flex-col items-center justify-center px-6 text-center text-white transition-all duration-500 group-hover:bg-black/70 shadow-[0_32px_40px_rgba(0,0,0,0.1)]">
   
@@ -98,8 +115,8 @@ export default function Signature() {
         </div>
 
         {/* Dish 3 - Right Column: Large */}
-        <div className="relative rounded-2xl overflow-hidden group  h-[250px] lg:h-[456px] lg:row-span-2 w-[192px] lg:w-[464px]">
-          <Image src="/images/dishes/paneer.jpg" alt="Paneer" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+        <div className="relative rounded-2xl overflow-hidden group  h-[188px] lg:h-[456px] lg:row-span-2 w-full lg:w-[464px]">
+          <Image src={poneer} alt="Paneer" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-black/60 backdrop-blur-md rounded-[32px] p-6 text-center text-white transition-all duration-500 group-hover:bg-black/75">
     
     <h3 className="text-xl md:text-2xl font-semibold mb-2">
@@ -117,8 +134,8 @@ export default function Signature() {
 
         {/* Dish 5 (Spicy Dal) - Middle Column: Large (Upore faka jayga puron korbe) */}
         {/* Important: Eitike code-er serial-e upore anle faka jayga thakbe na */}
-        <div className="relative rounded-2xl overflow-hidden group  h-[280px] lg:h-[506px] lg:row-span-2 order-last lg:order-none w-[192px] lg:w-[464px]">
-          <Image src="/images/dishes/dal.jpg" alt="Dal" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+        <div className="relative rounded-2xl overflow-hidden group  h-[188px] lg:h-[506px] lg:row-span-2 order-last lg:order-none w-full lg:w-[464px]">
+          <Image src={dal} alt="Dal" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
           <div 
   className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-lg flex flex-col items-center justify-center px-8 text-center text-white transition-all duration-500 group-hover:bg-black/70"
   style={{
@@ -142,8 +159,8 @@ export default function Signature() {
         </div>
 
         {/* Dish 4 - Left Column (Bottom): Small */}
-        <div className="relative rounded-2xl overflow-hidden group w-full h-[180px] lg:h-[322px] w-[192px] lg:w-[464px]">
-          <Image src="/images/dishes/lamb.jpg" alt="Lamb" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+        <div className="relative rounded-2xl overflow-hidden group  h-[188px] lg:h-[322px] w-full lg:w-[464px] border-radius-[10px] lg:border-radius[16px]">
+          <Image src={lamb} alt="Lamb" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
           <div 
   className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-xl flex flex-col items-center justify-center px-10 text-center text-white transition-all duration-500 group-hover:bg-black/60"
   style={{
@@ -167,8 +184,8 @@ Fairly hot.
         </div>
 
         {/* Dish 6 - Right Column (Bottom): Small */}
-        <div className="relative rounded-2xl overflow-hidden group  h-[180px] lg:h-[322px] w-[192px] lg:w-[464px]">
-          <Image src="/images/dishes/butter.jpg" alt="Butter Chicken" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+        <div className="relative rounded-2xl overflow-hidden group  h-[188px] lg:h-[322px] w-full lg:w-[464px]">
+          <Image src={butter} alt="Butter Chicken" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
           <div 
   className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-xl flex flex-col items-center justify-center text-center text-white transition-all duration-500 group-hover:bg-black/60 shadow-[0_32px_40px_rgba(0,0,0,0.1)]"
   style={{
