@@ -10,7 +10,7 @@ export default function ServicePage(){
         <div>
            <CommonBanner
             title="Personalized Indian Dining Experiences, Crafted in Your Home"
-        description="From intimate dinners to lively celebrations, Chef Raz offers tailored culinary services designed around your taste, event, and lifestyle."
+        description="From intimate dinners to lively celebrations, ChefBuddy offers tailored culinary services designed around your taste, event, and lifestyle."
         imageUrl={heroImg.src}
            ></CommonBanner>
             <Services></Services>

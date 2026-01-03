@@ -50,8 +50,8 @@ const Services = () => {
   return (
     <section className="py-16 lg:py-12 bg-[#FFFAF6] w-full px-4 md:px-8 lg:px-12">
       <div className="text-center mb-12">
-        <h2 className="text-[28px] md:text-[48px] font-bold text-[#2D2D2D]">Our Services</h2>
-        <p className="text-gray-600 mt-2 max-w-2xl text-[14px] md:text-[17px] mx-auto">
+        <h2 className="text-[28px] md:text-[48px] font-bold text-[#2D2D2D] "style={{ fontFamily: "'Alata', sans-serif" }}>Our Services</h2>
+        <p className="text-gray-600 mt-2 max-w-2xl text-[14px] md:text-[17px] mx-auto" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
           A personalized fine-dining experience, crafted fresh in your kitchen.
         </p>
       </div>
@@ -61,7 +61,7 @@ const Services = () => {
         {services.map((service, index) => (
           <div 
             key={index} 
-            className="bg-white p-6 md:p-8 rounded-[16px] border border-gray-100 flex flex-col items-center text-center w-full shadow-sm hover:shadow-md transition-all group"
+            className="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 flex flex-col items-center text-center w-full shadow-sm hover:shadow-md transition-all group"
           >
             {/* Service Icon Container */}
             <div className="flex justify-center items-center mb-4 h-[70px]">
@@ -77,11 +77,15 @@ const Services = () => {
               />
             </div>
 
-            <h3 className="text-[18px] lg:text-[20px] font-bold text-[#000] mb-3 leading-tight min-h-[50px] flex items-center justify-center">
+            <h3 className="text-[18px] lg:text-[20px] font-bold text-[#000] mb-3 leading-tight min-h-[50px] flex items-center justify-center"
+            style={{ fontFamily: "'Alata', sans-serif" }}
+            >
               {service.title}
             </h3>
             
-            <p className="text-gray-500 text-[14px] leading-relaxed mb-6 flex-grow">
+            <p className="text-gray-500 text-[14px] lg:text-[17px] leading-relaxed mb-6 flex-grow"
+            style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+            >
               {service.description}
             </p>
 

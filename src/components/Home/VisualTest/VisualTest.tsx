@@ -47,10 +47,12 @@ const ChefGallery: React.FC = () => {
       <div className="max-w-[1440px] mx-auto px-4">
         
         <div className="text-center mb-10 md:mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 px-2">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 px-2"
+          style={{ fontFamily: "'Alata', sans-serif" }}>
             A visual taste of our craft and cuisine.
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-base md:text-lg">
+          <p className="text-gray-500 max-w-2xl mx-auto text-base md:text-lg"
+          style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
             A curated glimpse into the refinement, detail, and ritual <br className="hidden md:block" />
             behind every Harp & Suited experience.
           </p>

@@ -8,7 +8,7 @@ import LogoImg from "../../assets/images/chef_log.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // স্ক্রল এবং মেনু বন্ধ করার ফাংশন
+
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
     const element = document.getElementById('book-chef');

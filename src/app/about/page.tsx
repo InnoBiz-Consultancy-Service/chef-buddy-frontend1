@@ -9,7 +9,7 @@ export default function About(){
    return(
     <div>
          <CommonBanner 
-         title="Chef Raz is Bringing the warmth of authentic Indian cuisine to your table."
+         title="ChefBuddy is Bringing the warmth of authentic Indian cuisine to your table."
         description="Enjoy the rich aromas and vibrant spices of India—crafted fresh in your home.From intimate dinners to family celebrations and corporate gatherings, experience fine Indian cuisine with your own private chef."
         imageUrl={heroImg.src}
          ></CommonBanner>

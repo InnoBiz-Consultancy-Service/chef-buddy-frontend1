@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import avatar from "../../../assets/images/testimonial1.jpg";
+
 // Mock Data
 const testimonials = [
   {
@@ -29,7 +30,7 @@ const testimonials = [
 ];
 
 export default function Testimonial() {
-  const [activeIndex, setActiveIndex] = useState(1); // Majher card ti default active
+  const [activeIndex, setActiveIndex] = useState(1);
 
   return (
     <section className="py-16 md:py-24 bg-white px-4">
@@ -37,10 +38,16 @@ export default function Testimonial() {
         
         {/* Header Section */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-[32px] md:text-[48px] font-bold text-[#1D1D1D] mb-4">
+          <h2 
+            className="text-[32px] md:text-[48px] font-bold text-[#1D1D1D] mb-4"
+            style={{ fontFamily: "'Alata', sans-serif" }}
+          >
             Loved by Our Customers
           </h2>
-          <p className="text-[#4A4A4A] text-sm md:text-base">
+          <p 
+            className="text-[#4A4A4A] text-[16px] md:text-[18px]"
+            style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+          >
             Real stories from the people who enjoy our food every day.
           </p>
         </div>
@@ -52,12 +59,20 @@ export default function Testimonial() {
               key={item.id}
               className={`transition-all duration-500 rounded-[32px] p-8 md:p-12 flex flex-col items-center text-center
                 ${index === activeIndex 
-                  ? "bg-[#F3EFE3] w-full lg:w-[600px] min-h-[400px] z-10 scale-100" 
+                  ? "bg-[#F3EFE3] w-full lg:w-[600px] min-h-[450px] z-10 scale-100 shadow-lg" 
                   : "bg-[#F9F8F3] w-full lg:w-[400px] min-h-[350px] lg:scale-95 opacity-80 lg:block hidden"
                 }`}
             >
-              {/* Review Content */}
-              <p className="text-[#1D1D1D] text-sm md:text-base leading-relaxed mb-8 italic">
+              {/* Review Content - Nunito Sans, 17px, 27px Line Height */}
+              <p 
+                className="text-[#1D1D1D] mb-8 italic"
+                style={{ 
+                  fontFamily: "'Nunito Sans', sans-serif",
+                  fontSize: "17px",
+                  lineHeight: "27px",
+                  fontWeight: 400
+                }}
+              >
                 &quot;{item.content}&quot;
               </p>
 
@@ -70,16 +85,21 @@ export default function Testimonial() {
 
               {/* Author Info */}
               <div className="mt-auto">
-                <div className="w-12 h-12 rounded-full overflow-hidden mx-auto mb-3 border-2 border-white">
+                <div className="w-14 h-14 rounded-full overflow-hidden mx-auto mb-3 border-2 border-white shadow-sm">
                   <Image 
                     src={item.avatar} 
                     alt={item.author} 
-                    width={48} 
-                    height={48} 
+                    width={56} 
+                    height={56} 
                     className="object-cover"
                   />
                 </div>
-                <h4 className="text-[#1D1D1D] font-bold text-sm">{item.author}</h4>
+                <h4 
+                  className="text-[#1D1D1D] font-bold text-[16px]"
+                  style={{ fontFamily: "'Alata', sans-serif" }}
+                >
+                  {item.author}
+                </h4>
               </div>
             </div>
           ))}

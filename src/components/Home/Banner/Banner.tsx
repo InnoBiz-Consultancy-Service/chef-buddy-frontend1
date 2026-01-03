@@ -39,26 +39,31 @@ const Banner = () => {
         
         {/* Main Content */}
         <div className="flex flex-col items-center mb-20 lg:mb-0">
-          <h1 className="text-white text-[32px] md:text-[54px] lg:text-[72px] font-extrabold leading-[1.2] lg:leading-[1.1] max-w-[950px]">
-            Private Chef Services for <span className='block lg:inline text-[#F7931E]'>Elevated</span> At-Home Dining
-          </h1>
+         <div>
+  {/* H1 Section */}
+  <h1 className="text-white text-[32px] md:text-[54px] lg:text-[72px] font-extrabold leading-[1.2] lg:leading-[1.1] max-w-[950px] tracking-[0.01em]" style={{ fontFamily: "'Alata', sans-serif" }}>
+    Private Chef Services for <span className='block lg:inline text-[#F7931E]'>Elevated</span> At-Home Dining
+  </h1>
 
-          <p className="text-gray-200 text-[16px] md:text-[18px] lg:text-[20px] mt-6 max-w-[800px] leading-relaxed">
-            Enjoy the rich aromas and vibrant spices of India—crafted fresh in your home. 
-            From intimate dinners to family celebrations and corporate gatherings.
-          </p>
-
+  {/* Paragraph Section */}
+  <p className="text-gray-200 text-[16px] md:text-[18px] lg:text-[20px] mt-6 max-w-[800px] leading-[20px] font-[400] tracking-[0.01em] font-semibold" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+    Enjoy the rich aromas and vibrant spices of India—crafted fresh in your home. 
+    From intimate dinners to family celebrations and corporate gatherings.
+  </p>
+</div>
           <button 
-          onClick={scrollToContact}
-            className="mt-10 font-bold transition-all hover:scale-105 active:scale-95 flex items-center justify-center cursor-pointer bg-[#F7931E] text-black rounded-full"
-            style={{
-              width: '274px',
-              height: '59px',
-              fontSize: '18px',
-            }}
-          >
-            Book a Consultation
-          </button>
+  onClick={scrollToContact}
+  className="mt-10 font-bold transition-all hover:scale-105 active:scale-95 flex items-center justify-center cursor-pointer bg-[#F7931E] text-black rounded-full animate-pulse shadow-[0_0_15px_rgba(247,147,30,0.4)] hover:shadow-[0_0_25px_rgba(247,147,30,0.8)]"
+  style={{
+    width: '274px',
+    height: '59px',
+    fontSize: '18px',
+    animationDuration: '3s', // ইফেক্টটি কতক্ষণ ধরে চলবে
+    fontFamily: "'Alata', sans-serif" // আপনার ডিজাইন অনুযায়ী ফন্ট
+  }}
+>
+  Book a Consultation
+</button>
         </div>
 
         {/* Bottom Features Section (CommonBanner style follow kore) */}

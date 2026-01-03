@@ -64,8 +64,12 @@ const BookChef: React.FC = () => {
         {/* Left Side: Contact Info */}
         <div className="text-white space-y-8 md:space-y-10 text-center lg:text-left">
           <div className="space-y-4 md:space-y-6">
-            <h2 className="text-3xl md:text-5xl font-bold leading-tight">Book Your Private Chef</h2>
-            <p className="text-gray-200 md:text-gray-300 text-base md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0">
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight"
+            style={{ fontFamily: "'Alata', sans-serif" }}
+            >Book Your Private Chef</h2>
+            <p className="text-gray-200 md:text-gray-300 text-base md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0"
+            style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+            >
               Share your vision, dietary needs, and preferred date, and we'll curate a menu just for you.
             </p>
           </div>
@@ -84,7 +88,9 @@ const BookChef: React.FC = () => {
 
         {/* Right Side: Contact Form with Validation */}
         <div className="bg-white/80 backdrop-blur-md border border-white/20 p-6 md:p-12 rounded-2xl shadow-2xl">
-          <h3 className="text-black text-xl md:text-2xl font-medium mb-8 text-center lg:text-left">Send Us a Message</h3>
+          <h3 className="text-black text-xl md:text-2xl font-medium mb-8 text-center lg:text-left"
+          style={{ fontFamily: "'Alata', sans-serif" }}
+          >Send Us a Message</h3>
           
           <form className="space-y-6 md:space-y-10" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
@@ -119,7 +125,9 @@ const BookChef: React.FC = () => {
             <textarea name="description" value={formData.description} onChange={handleChange} placeholder="A brief description about your needs" rows={4} className="w-full bg-transparent border-b border-gray-500 py-2 text-black outline-none focus:border-[#e67e22] transition-all resize-none placeholder:text-black font-light text-sm md:text-base"></textarea>
 
             <div className="flex justify-center pt-4">
-              <button type="submit" className="w-full md:max-w-xs bg-[#e67e22] hover:bg-[#d35400] text-white font-medium py-3 rounded-xl transition-all shadow-lg uppercase tracking-widest text-sm active:scale-95 cursor-pointer">
+              <button type="submit" className="w-full md:max-w-xs bg-[#e67e22] hover:bg-[#d35400] text-white font-medium py-3 rounded-xl transition-all shadow-lg uppercase tracking-widest text-sm active:scale-95 cursor-pointer"
+                style={{ fontFamily: "'Alata', sans-serif" }}
+              >
                 Submit Message
               </button>
             </div>

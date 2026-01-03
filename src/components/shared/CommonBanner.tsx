@@ -24,14 +24,31 @@ export default function CommonBanner({ title, description, imageUrl }: HeroProps
       <div className="mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-0 min-h-screen">
           {/* Left Content */}
-          <div className="flex justify-center items-center w-full lg:w-fit p-10">
-            <div className="flex flex-col justify-center w-fit">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-center lg:text-left">
+          <div className="flex justify-center items-center w-full lg:w-fit p-6 md:p-10">
+            <div className="flex flex-col justify-center w-fit max-w-[650px]">
+              {/* Heading: Mobile 36px/44px, Desktop 64px/72px */}
+              <h1 
+                className="font-normal mb-6 text-center lg:text-left text-[#F5F5F5] text-[36px] leading-[44px] md:text-[48px] md:leading-[56px] lg:text-[64px] lg:leading-[72px]"
+                style={{ 
+                  fontFamily: "'Alata', sans-serif", 
+                  letterSpacing: "0%" 
+                }}
+              >
                 {title}
               </h1>
-              <p className="text-base md:text-lg text-gray-300 mb-8 leading-relaxed text-center lg:text-left">
+              
+              {/* Description: Mobile 16px, Desktop 18px */}
+              <p 
+                className="mb-8 text-center lg:text-left text-white/90 text-[16px] leading-[24px] md:text-[17px] md:leading-[26px] lg:text-[18px] lg:leading-[100%]"
+                style={{ 
+                  fontFamily: "'Nunito Sans', sans-serif", 
+                  letterSpacing: "0%",
+                  fontWeight: 400 
+                }}
+              >
                 {description}
               </p>
+
               <div className="flex justify-center lg:justify-start">
                 <button className="bg-[#F7931E] hover:bg-[#e07b1a] text-[#353535] font-semibold px-8 py-4 rounded-full transition-colors duration-300 cursor-pointer">
                   Book a Consultation
@@ -40,9 +57,8 @@ export default function CommonBanner({ title, description, imageUrl }: HeroProps
             </div>
           </div>
 
-          {/* Right Image Container - Top spacing added for Navbar visibility */}
+          {/* Right Image Container */}
           <div className="relative hidden lg:block w-full h-full pt-24 pb-20 px-6"> 
-             {/* pt-24 ব্যবহার করা হয়েছে যাতে নেভিবার এর জন্য উপরে জায়গা থাকে */}
             <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 src={imageUrl}
@@ -51,13 +67,12 @@ export default function CommonBanner({ title, description, imageUrl }: HeroProps
                 className="object-cover"
                 priority
               />
-              {/* Image এর ওপর হালকা কালো আভা যাতে নিচের টেক্সট ফুটে ওঠে */}
               <div className="absolute inset-0 bg-black/10" />
             </div>
           </div>
         </div>
 
-        {/* Features Section - Absolute Position Fixed */}
+        {/* Features Section */}
         <div className="absolute bottom-0 left-0 right-0 w-full z-20">
           <div className="bg-gradient-to-t from-black via-black/90 to-transparent pt-20">
             <div className="max-w-7xl mx-auto flex flex-wrap justify-around items-center py-8 px-4 lg:px-8">

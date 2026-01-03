@@ -77,62 +77,81 @@ export default function DiningPackage() {
       </div>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1440px] w-full z-10 items-center">
-        {packages.map((pkg, index) => (
-          <div
-            key={index}
-            style={{
-              boxShadow: "0px 32px 40px 0px rgba(0, 0, 0, 0.10)",
+      {/* Cards Grid */}
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1440px] w-full z-10 items-stretch"> {/* items-stretch ensures equal height rows */}
+  {packages.map((pkg, index) => (
+    <div
+      key={index}
+      style={{
+        boxShadow: "0px 32px 40px 0px rgba(0, 0, 0, 0.10)",
+      }}
+      className={`relative rounded-[32px] p-8 md:p-10 flex flex-col transition-all duration-500 border
+        ${
+          pkg.isFeatured
+            ? "bg-white text-black lg:scale-105 border-transparent z-20" 
+            : "bg-[#1D1D1D]/50 backdrop-blur-xl text-white border-white/20"
+        }
+        w-full max-w-[464px] mx-auto min-h-full`} // Fixed: Removed hardcoded heights, used min-h-full
+    >
+      {/* Package Title */}
+      <h3 
+        className={`text-2xl md:text-[28px] font-bold mb-2 ${pkg.isFeatured ? 'text-[#1D1D1D]' : 'text-white'}`}
+        style={{ fontFamily: "'Alata', sans-serif" }}
+      >
+        {pkg.title}
+    </h3>
+      
+      {/* Price */}
+      <p 
+        className={`text-sm md:text-[16px] mb-6 font-medium ${pkg.isFeatured ? 'text-gray-500' : 'text-gray-300'}`}
+        style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+      >
+        {pkg.price}
+      </p>
+
+      {/* Features List */}
+      <ul className="flex-grow space-y-1 mb-8"> {/* Reduced space-y for better fit */}
+        {pkg.features.map((feature, i) => (
+          <li 
+            key={i} 
+            className={`flex items-start gap-3 tracking-[0%] ${pkg.isFeatured ? "text-[#262626]" : "text-white"}`}
+            style={{ 
+              fontFamily: "'Nunito Sans', sans-serif",
+              fontSize: "17px", // Slightly reduced from 19px to prevent overflow on 3rd card
+              lineHeight: "32px", // Adjusted line height from 42px
+              fontWeight: 400
             }}
-            className={`relative rounded-[32px] p-8 md:p-10 flex flex-col transition-all duration-500 border
-              ${
-                pkg.isFeatured
-                  ? "bg-white text-black h-auto lg:h-[632px] scale-105 border-transparent" 
-                  : "bg-[#1D1D1D]/50 backdrop-blur-xl text-white border-white/20 h-auto lg:h-[580px]"
-              }
-              w-full max-w-[464px] mx-auto`}
           >
-            {/* Package Title */}
-            <h3 className={`text-2xl md:text-[28px] font-bold mb-2 ${pkg.isFeatured ? 'text-[#1D1D1D]' : 'text-white'}`}>
-              {pkg.title}
-            </h3>
-            
-            {/* Price */}
-            <p className={`text-sm md:text-[16px] mb-8 font-medium ${pkg.isFeatured ? 'text-gray-500' : 'text-gray-300'}`}>
-              {pkg.price}
-            </p>
-
-            {/* Features List */}
-            <ul className="flex-grow space-y-4 mb-10">
-              {pkg.features.map((feature, i) => (
-                <li key={i} className="flex items-start gap-3 text-[14px] md:text-[15px]">
-                  <span className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${pkg.isFeatured ? 'bg-black' : 'bg-white'}`} />
-                  <span className={pkg.isFeatured ? "text-gray-800" : "text-white"}>{feature}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* Action Button - Size and Radius updated per requirements */}
-            <button
-            onClick={scrollToContact}
-              style={{
-                width: '100%', // Flexible within container up to 375px max via container constraints
-                maxWidth: '375px',
-                height: '50px',
-                borderRadius: '16px',
-              }}
-              className={`mx-auto flex items-center justify-center font-bold transition-all duration-300 cursor-pointer
-                ${
-                  pkg.isFeatured
-                    ? "bg-[#F59121] text-white hover:bg-[#e07d10]" 
-                    : "bg-white text-black hover:bg-gray-200"
-                }`}
-            >
-              {pkg.buttonText}
-            </button>
-          </div>
+            <span className={`mt-3 w-1.5 h-1.5 rounded-full shrink-0 ${pkg.isFeatured ? 'bg-black' : 'bg-white'}`} />
+            <span>{feature}</span>
+          </li>
         ))}
+      </ul>
+
+      {/* Action Button */}
+      <div className="mt-auto pt-4"> {/* mt-auto pushes button to the bottom, pt-4 adds breathing room */}
+        <button
+          onClick={scrollToContact}
+          style={{
+            width: '100%',
+            maxWidth: '375px',
+            height: '50px',
+            borderRadius: '16px',
+            fontFamily: "'Alata', sans-serif"
+          }}
+          className={`mx-auto flex items-center justify-center font-bold transition-all duration-300 cursor-pointer
+            ${
+              pkg.isFeatured
+                ? "bg-[#F59121] text-white hover:bg-[#e07d10]" 
+                : "bg-white text-black hover:bg-gray-200"
+            }`}
+        >
+          {pkg.buttonText}
+        </button>
       </div>
+    </div>
+  ))}
+</div>
     </section>
   );
 }
