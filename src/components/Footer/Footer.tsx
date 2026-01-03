@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'; // Next.js Link import করা হয়েছে
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaPinterest } from 'react-icons/fa';
 import LogoImg from  "../../assets/images/chef_log.png";
 import Image from 'next/image';
@@ -10,14 +11,16 @@ const Footer = () => {
         
         {/* Logo Section */}
         <div className="flex flex-col items-center mb-16">
-          <Image 
-            src={LogoImg} 
-            alt="Chef Buddy Logo" 
-            width={150}
-            height={60}
-            className="object-contain"
-            priority
-          />
+          <Link href="/">
+            <Image 
+              src={LogoImg} 
+              alt="Chef Buddy Logo" 
+              width={150}
+              height={60}
+              className="object-contain cursor-pointer"
+              priority
+            />
+          </Link>
         </div>
 
         {/* Links Grid */}
@@ -29,12 +32,12 @@ const Footer = () => {
               Services
             </h3>
             <ul className="space-y-2 text-gray-400" style={{ fontFamily: "'Nunito Sans', sans-serif", fontSize: "18px", lineHeight: "32px", fontWeight: 400 }}>
-              <li><a href="#" className="hover:text-white transition">Small Buffet</a></li>
-              <li><a href="#" className="hover:text-white transition">Party</a></li>
-              <li><a href="#" className="hover:text-white transition">Wedding</a></li>
-              <li><a href="#" className="hover:text-white transition">Combos</a></li>
-              <li><a href="#" className="hover:text-white transition">Birthday</a></li>
-              <li><a href="#" className="hover:text-white transition">Family dine</a></li>
+              <li><Link href="/services#small-buffet" className="hover:text-white transition">Small Buffet</Link></li>
+              <li><Link href="/services#party" className="hover:text-white transition">Party</Link></li>
+              <li><Link href="/services#wedding" className="hover:text-white transition">Wedding</Link></li>
+              <li><Link href="/services#combos" className="hover:text-white transition">Combos</Link></li>
+              <li><Link href="/services#birthday" className="hover:text-white transition">Birthday</Link></li>
+              <li><Link href="/services#family-dine" className="hover:text-white transition">Family dine</Link></li>
             </ul>
           </div>
 
@@ -44,12 +47,12 @@ const Footer = () => {
               Menu
             </h3>
             <ul className="space-y-2 text-gray-400" style={{ fontFamily: "'Nunito Sans', sans-serif", fontSize: "18px", lineHeight: "32px", fontWeight: 400 }}>
-              <li><a href="#" className="hover:text-white transition">Burger</a></li>
-              <li><a href="#" className="hover:text-white transition">Chicken</a></li>
-              <li><a href="#" className="hover:text-white transition">Indian Curry</a></li>
-              <li><a href="#" className="hover:text-white transition">Combos</a></li>
-              <li><a href="#" className="hover:text-white transition">Drinks</a></li>
-              <li><a href="#" className="hover:text-white transition">Full Menu</a></li>
+              <li><Link href="/menu#burger" className="hover:text-white transition">Burger</Link></li>
+              <li><Link href="/menu#chicken" className="hover:text-white transition">Chicken</Link></li>
+              <li><Link href="/menu#indian-curry" className="hover:text-white transition">Indian Curry</Link></li>
+              <li><Link href="/menu#combos" className="hover:text-white transition">Combos</Link></li>
+              <li><Link href="/menu#drinks" className="hover:text-white transition">Drinks</Link></li>
+              <li><Link href="/menu" className="hover:text-white transition font-semibold">Full Menu</Link></li>
             </ul>
           </div>
 
@@ -59,12 +62,12 @@ const Footer = () => {
               About
             </h3>
             <ul className="space-y-2 text-gray-400" style={{ fontFamily: "'Nunito Sans', sans-serif", fontSize: "18px", lineHeight: "32px", fontWeight: 400 }}>
-              <li><a href="#" className="hover:text-white transition">Our Story</a></li>
-              <li><a href="#" className="hover:text-white transition">Mission & Vision</a></li>
-              <li><a href="#" className="hover:text-white transition">Quality Standards</a></li>
-              <li><a href="#" className="hover:text-white transition">Locations</a></li>
-              <li><a href="#" className="hover:text-white transition">Gallery</a></li>
-              <li><a href="#" className="hover:text-white transition">Privacy Policy</a></li>
+              <li><Link href="/about" className="hover:text-white transition">Our Story</Link></li>
+              <li><Link href="/about#mission" className="hover:text-white transition">Mission & Vision</Link></li>
+              <li><Link href="/about#quality" className="hover:text-white transition">Quality Standards</Link></li>
+              <li><Link href="/locations" className="hover:text-white transition">Locations</Link></li>
+              <li><Link href="/gallery" className="hover:text-white transition">Gallery</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
             </ul>
           </div>
 
@@ -77,26 +80,26 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="font-bold mb-4" style={{ fontFamily: "'Alata', sans-serif" }}>Phone</h3>
-                <p className="text-gray-400">3119-3455-6677</p>
+                <p className="text-gray-400 underline decoration-[#F39C12]/30"><a href="tel:311934556677">3119-3455-6677</a></p>
               </div>
               <div>
                 <h3 className="font-bold mb-4" style={{ fontFamily: "'Alata', sans-serif" }}>Email</h3>
-                <p className="text-gray-400">info@chefbuddy.com</p>
+                <p className="text-gray-400 underline decoration-[#F39C12]/30"><a href="mailto:info@chefbuddy.com">info@chefbuddy.com</a></p>
               </div>
             </div>
 
             {/* Social Icons */}
             <div className="flex flex-col space-y-6 pt-2">
-              <a href="#" className="text-white hover:text-[#F39C12] transition text-xl"><FaFacebook /></a>
-              <a href="#" className="text-white hover:text-[#F39C12] transition text-xl"><FaInstagram /></a>
-              <a href="#" className="text-white hover:text-[#F39C12] transition text-xl"><FaLinkedin /></a>
-              <a href="#" className="text-white hover:text-[#F39C12] transition text-xl"><FaYoutube /></a>
-              <a href="#" className="text-white hover:text-[#F39C12] transition text-xl"><FaPinterest /></a>
+              <a href="https://facebook.com" target="_blank" className="text-white hover:text-[#F39C12] transition text-xl"><FaFacebook /></a>
+              <a href="https://instagram.com" target="_blank" className="text-white hover:text-[#F39C12] transition text-xl"><FaInstagram /></a>
+              <a href="https://linkedin.com" target="_blank" className="text-white hover:text-[#F39C12] transition text-xl"><FaLinkedin /></a>
+              <a href="https://youtube.com" target="_blank" className="text-white hover:text-[#F39C12] transition text-xl"><FaYoutube /></a>
+              <a href="https://pinterest.com" target="_blank" className="text-white hover:text-[#F39C12] transition text-xl"><FaPinterest /></a>
             </div>
           </div>
         </div>
 
-        {/* Copyright Section with Pulsing Effect */}
+        {/* Copyright Section */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500" style={{ fontFamily: "'Nunito Sans', sans-serif", fontSize: "14px" }}>
             © 2026 Chef Buddy ®. All rights reserved.

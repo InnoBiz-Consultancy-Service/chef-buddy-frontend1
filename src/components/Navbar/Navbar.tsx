@@ -43,7 +43,9 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <div className="flex items-center space-x-10">
               {navLinks.map((link) => (
-                <Link key={link.name} href={link.href} className="text-white hover:text-[#F7931E] transition-all text-[18px] font-semibold">
+                <Link key={link.name} href={link.href} className="text-white hover:text-[#F7931E] transition-all text-[18px] font-semibold"
+                style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+                >
                   {link.name}
                 </Link>
               ))}
@@ -53,7 +55,8 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <button 
               onClick={scrollToContact}
-              className="bg-[#F7931E] text-black px-8 py-3 rounded-full font-bold hover:scale-105 transition-all cursor-pointer"
+              className="bg-[#FFDBB1] text-black px-8 py-3 rounded-full font-bold hover:scale-105 transition-all cursor-pointer"
+              style={{ fontFamily: "'Nunito Sans', sans-serif" }}
             >
               Book Now
             </button>
@@ -73,8 +76,9 @@ const Navbar = () => {
                <Link 
                 key={link.name} 
                 href={link.href} 
-                onClick={() => setIsOpen(false)} // লিংক ক্লিক করলে মেনু বন্ধ হবে
+                onClick={() => setIsOpen(false)} 
                 className="text-white text-3xl font-bold hover:text-[#F7931E] transition-colors"
+                style={{ fontFamily: "'Nunito Sans', sans-serif" }}
                >
                   {link.name}
                </Link>

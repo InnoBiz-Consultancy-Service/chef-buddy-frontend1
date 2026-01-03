@@ -68,10 +68,13 @@ export default function Blogs() {
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold text-[#1a1a1a] mb-4">
+          <h2 className="text-4xl md:text-6xl font-bold text-[#1a1a1a] mb-4"
+            style={{ fontFamily: "'Alata', sans-serif" }}
+          >
             Our Blogs
           </h2>
-          <p className="text-gray-500 text-base md:text-lg">
+          <p className="text-gray-500 text-base md:text-lg"
+            style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
             See what we are upto these days
           </p>
         </div>
@@ -96,10 +99,12 @@ export default function Blogs() {
 
               {/* Text Content */}
               <div className="flex flex-col flex-grow">
-                <h3 className="text-xl md:text-2xl font-bold text-[#1a1a1a] leading-tight mb-4 group-hover:text-[#F7931E] transition-colors duration-300">
+                <h3 className="text-xl md:text-2xl font-bold text-[#1a1a1a] leading-tight mb-4 group-hover:text-[#F7931E] transition-colors duration-300"
+                  style={{ fontFamily: "'Alata', sans-serif" }}>
                   {blog.title}
                 </h3>
-                <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-4 line-clamp-4">
+                <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-4 line-clamp-4"
+                  style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
                   {blog.description}
                 </p>
                 <button className="text-[#F7931E] font-semibold text-sm underline underline-offset-4 hover:text-[#e07b1a] w-fit">
