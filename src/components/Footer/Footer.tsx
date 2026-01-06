@@ -80,11 +80,11 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="font-bold mb-4" style={{ fontFamily: "'Alata', sans-serif" }}>Phone</h3>
-                <p className="text-gray-400 underline decoration-[#F39C12]/30"><a href="tel:311934556677">3119-3455-6677</a></p>
+                <p className="text-gray-400 underline decoration-[#F39C12]/30"><a href="tel:311934556677">+44 7833-620181</a></p>
               </div>
               <div>
                 <h3 className="font-bold mb-4" style={{ fontFamily: "'Alata', sans-serif" }}>Email</h3>
-                <p className="text-gray-400 underline decoration-[#F39C12]/30"><a href="mailto:info@chefbuddy.com">info@chefbuddy.com</a></p>
+                <p className="text-gray-400 underline decoration-[#F39C12]/30"><a href="mailto:info@chefbuddy.com">chefbuddyscot@gmail.com</a></p>
               </div>
             </div>
 

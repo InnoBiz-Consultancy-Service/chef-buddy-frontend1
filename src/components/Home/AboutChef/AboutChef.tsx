@@ -51,7 +51,7 @@ export default function AboutChef({ chefImage }: AboutChefProps) {
               }}
             >
               <p>
-                ChefBuddy is a passionate private chef with 7+ years of experience,
+                ChefBuddy is a passionate private chef with Seven+ years of experience,
                 bringing the warmth and authenticity of Indian cuisine straight to your table. 
                 As a Lifetime Member of the Chef Federation of Bangladesh and a Member of the 
                 Federation of Chefs Scotland, he blends international expertise with traditional 

@@ -5,114 +5,97 @@ import vegPakora from "../../assets/images/veg pakora.jpg";
 import tandoori from "../../assets/images/tandoori starters.jpg";
 import murugChat from "../../assets/images/chicken chaat.jpg";
 import shikhKebab from "../../assets/images/shikh.jpg";
+
 export default function Starters() {
+  const starters = [
+    {
+      id: 1,
+      name: "Chicken Pakora",
+      image: chickenPakora,
+      desc: "Tender pieces of chicken coated in a spiced gram flour batter and deep-fried until golden.",
+      customClass: "lg:h-[456px] lg:row-span-2",
+    },
+    {
+      id: 2,
+      name: "Haggis Pakora",
+      image: haggisPakora,
+      desc: "A unique fusion snack featuring traditional Scottish haggis fried in a savory Indian batter.",
+      customClass: "lg:h-[270px]",
+    },
+    {
+      id: 3,
+      name: "Veg Pakora",
+      image: vegPakora,
+      desc: "Crispy fritters made from a variety of fresh vegetables mixed with seasoned lentil flour.",
+      customClass: "lg:h-[456px] lg:row-span-2",
+    },
+    {
+      id: 4,
+      name: "Tandoori Starters",
+      image: tandoori,
+      desc: "Meats and vegetables marinated in yogurt and spices, charred to perfection in a clay oven.",
+      customClass: "lg:h-[506px] lg:row-span-2 order-last lg:order-none",
+    },
+    {
+      id: 5,
+      name: "Murug Chat",
+      image: murugChat,
+      desc: "A tangy and refreshing salad-style starter made with shredded chicken and zesty spices.",
+      customClass: "lg:h-[322px]",
+    },
+    {
+      id: 6,
+      name: "Sheekh Kebab",
+      image: shikhKebab,
+      desc: "Spiced minced meat (lamb or chicken) molded onto skewers and grilled to perfection.",
+      customClass: "lg:h-[322px]",
+    },
+  ];
+
   return (
     <div className="bg-white pb-20">
-      <h1 className="text-center text-3xl font-bold p-12 mt-8"
-      style={{ fontFamily: "'Alata', sans-serif" }}>Starters & Kebabs</h1>
+      <h1 className="text-center text-3xl font-bold p-12 mt-8" style={{ fontFamily: "'Alata', sans-serif" }}>
+        Starters & Kebabs
+      </h1>
 
-      <div className="grid gap-3 md:gap-8 grid-cols-2 lg:grid-cols-3 max-w-[1416px] mx-auto auto-rows-auto">
-        
-        {/* Dish 1 - Chicken Pakora */}
-        <div className="relative rounded-2xl overflow-hidden group h-[188px] lg:h-[456px] lg:row-span-2 w-full lg:w-[464px]">
-          <Image src={chickenPakora} alt="Chicken Pakora" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-          <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-all duration-500" />
-          <div className="absolute left-1/2 -translate-x-1/2 transition-all duration-500 ease-out
-                        bottom-2 w-[210px] h-[120px] p-[10px_16px] rounded-[20px] opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0
-                        md:bottom-6 md:w-[327px] md:h-[141px] md:rounded-[50px] md:p-6 md:opacity-100 md:translate-y-0
-                        bg-black/60 backdrop-blur-md flex flex-col items-center justify-center text-center text-white">
-            <h3 className="text-xl md:text-2xl font-bold mb-2"
-            style={{ fontFamily: "'Alata', sans-serif" }}
-            >Chicken Pakora</h3>
-            <p className="font-['Nunito_Sans'] text-xs md:text-sm text-gray-200 leading-relaxed line-clamp-3"
-            style={{fontFamily: "'Nunito Sans', sans-serif"}}
-            >
-              Tender pieces of chicken coated in a spiced gram flour batter and deep-fried until golden and crispy.
-            </p>
-          </div>
-        </div>
+      <div className="grid gap-6 grid-cols-2 lg:grid-cols-3 max-w-[1416px] mx-auto px-4 auto-rows-auto">
+        {starters.map((item) => (
+          <div key={item.id} className={`flex flex-col lg:block ${item.customClass}`}>
+            
+            {/* Image Container */}
+            <div className="relative rounded-2xl overflow-hidden group h-[188px] lg:h-full w-full">
+              <Image
+                src={item.image}
+                alt={item.name}
+                fill
+                className="object-cover transition-transform duration-700 lg:group-hover:scale-110"
+              />
 
-        {/* Dish 2 - Haggis Pakora */}
-        <div className="relative rounded-2xl overflow-hidden group h-[188px] lg:h-[270px] w-full lg:w-[464px]">
-          <Image src={haggisPakora} alt="Haggis Pakora" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-          <div className="absolute left-1/2 -translate-x-1/2 transition-all duration-500 ease-out
-                        bottom-2 w-[210px] h-[120px] p-[10px_16px] rounded-[20px] opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0
-                        md:bottom-6 md:w-[327px] md:h-[141px] md:rounded-[50px] md:p-6 md:opacity-100 md:translate-y-0
-                        bg-black/50 backdrop-blur-lg flex flex-col items-center justify-center text-center text-white">
-            <h3 className="text-xl md:text-[24px] font-bold mb-1"
-            style={{ fontFamily: "'Alata', sans-serif" }}
-            >Haggis Pakora</h3>
-            <p className="font-['Nunito_Sans'] text-xs md:text-[14px] text-gray-200 leading-tight line-clamp-3"
-            style={{fontFamily: "'Nunito Sans', sans-serif"}}>
-              A unique fusion snack featuring traditional Scottish haggis fried in a savory, spiced Indian batter.
-            </p>
-          </div>
-        </div>
+              {/* Desktop Overlay (Large Screen Only) */}
+              <div className="hidden lg:flex absolute inset-0 bg-black/10 group-hover:bg-black/40 transition-all duration-500 items-center justify-center">
+                <div className="absolute left-1/2 -translate-x-1/2 bottom-6 w-[327px] h-[141px] p-6 rounded-[50px] bg-black/60 backdrop-blur-md flex flex-col items-center justify-center text-center text-white opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                  <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Alata', sans-serif" }}>
+                    {item.name}
+                  </h3>
+                  <p className="text-sm text-gray-200 line-clamp-2" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            </div>
 
-        {/* Dish 3 - Veg Pakora */}
-        <div className="relative rounded-2xl overflow-hidden group h-[188px] lg:h-[456px] lg:row-span-2 w-full lg:w-[464px]">
-          <Image src={vegPakora} alt="Veg Pakora" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-          <div className="absolute left-1/2 -translate-x-1/2 transition-all duration-500 ease-out
-                        bottom-2 w-[210px] h-[120px] p-[10px_16px] rounded-[20px] opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0
-                        md:bottom-6 md:w-[327px] md:h-[141px] md:rounded-[50px] md:p-6 md:opacity-100 md:translate-y-0
-                        bg-black/60 backdrop-blur-md flex flex-col items-center justify-center text-center text-white">
-            <h3 className="text-xl md:text-2xl font-bold mb-2"
-           style={{ fontFamily: "'Alata', sans-serif" }}
-            >Veg Pakora</h3>
-            <p className="font-['Nunito_Sans'] text-sm md:text-base text-gray-200 leading-relaxed line-clamp-3"
-            style={{fontFamily: "'Nunito Sans', sans-serif"}}>
-              Crispy fritters made from a variety of fresh vegetables mixed with seasoned lentil flour.
-            </p>
-          </div>
-        </div>
+            {/* Mobile Text (Visible below 'lg' Screen) */}
+            <div className="mt-3 text-center lg:hidden">
+              <h3 className="text-sm font-bold text-gray-800" style={{ fontFamily: "'Alata', sans-serif" }}>
+                {item.name}
+              </h3>
+              <p className="text-[10px] text-gray-500 leading-tight mt-1 px-1" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+                {item.desc}
+              </p>
+            </div>
 
-        {/* Dish 4 - Tandoori Starters */}
-        <div className="relative rounded-2xl overflow-hidden group h-[188px] lg:h-[506px] lg:row-span-2 order-last lg:order-none w-full lg:w-[464px]">
-          <Image src={tandoori} alt="Tandoori Starters" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-          <div className="absolute left-1/2 -translate-x-1/2 transition-all duration-500 ease-out
-                        bottom-2 w-[210px] h-[120px] p-[10px_16px] rounded-[20px] opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0
-                        md:bottom-6 md:w-[327px] md:h-[141px] md:rounded-[50px] md:p-6 md:opacity-100 md:translate-y-0
-                        bg-black/50 backdrop-blur-lg flex flex-col items-center justify-center text-center text-white shadow-xl">
-            <h3 className="text-[22px] md:text-[24px] font-bold leading-tight mb-2"
-            style={{ fontFamily: "'Alata', sans-serif" }}
-            >Tandoori Starters</h3>
-            <p className="font-['Nunito_Sans'] text-[13px] md:text-[14px] text-gray-200 leading-snug line-clamp-3"
-            style={{fontFamily: "'Nunito Sans', sans-serif"}}>
-              A selection of succulent meats and vegetables marinated in yogurt and spices, charred to perfection in a clay oven.
-            </p>
           </div>
-        </div>
-
-        {/* Dish 5 - Murug Chat */}
-        <div className="relative rounded-2xl overflow-hidden group h-[188px] lg:h-[322px] w-full lg:w-[464px]">
-          <Image src={murugChat} alt="Murug Chat" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-          <div className="absolute left-1/2 -translate-x-1/2 transition-all duration-500 ease-out
-                        bottom-2 w-[210px] h-[120px] p-[10px_16px] rounded-[20px] opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0
-                        md:bottom-6 md:w-[327px] md:h-[141px] md:rounded-[50px] md:p-6 md:opacity-100 md:translate-y-0
-                        bg-black/50 backdrop-blur-xl flex flex-col items-center justify-center text-center text-white">
-            <h3 className="text-[24px] font-bold leading-tight mb-2 tracking-wide"
-            style={{ fontFamily: "'Alata', sans-serif" }}
-            >Murug Chat</h3>
-            <p className="font-['Nunito_Sans'] text-[14px] font-medium text-gray-100 leading-[1.4] opacity-90 line-clamp-3"
-            style={{fontFamily: "'Nunito Sans', sans-serif"}}>
-              A tangy and refreshing salad-style starter made with shredded chicken, chopped onions, and zesty spices.
-            </p>
-          </div>
-        </div>
- <div className="relative rounded-2xl overflow-hidden group h-[188px] lg:h-[322px] w-full lg:w-[464px] ">
-    <Image src={shikhKebab} alt="Butter Chicken" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-    <div className="absolute left-1/2 -translate-x-1/2 transition-all duration-500 ease-out
-                  bottom-2 w-[210px] h-[120px] p-[10px_16px] rounded-[20px] opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0
-                  md:bottom-6 md:w-[327px] md:h-[141px] md:rounded-[50px] md:p-6 md:opacity-100 md:translate-y-0
-                  bg-black/50 backdrop-blur-xl flex flex-col items-center justify-center text-center text-white">
-      <h2 className="text-[24px] font-semibold leading-tight mb-1 tracking-tight"
-      style={{ fontFamily: "'Alata', sans-serif" }}
-      >Sheekh Kebab</h2>
-      <p className="font-['Nunito_Sans'] font-normal text-white leading-[17px] text-[12px] line-clamp-2 w-[272px]"
-      style={{fontFamily: "'Nunito Sans', sans-serif"}}
-      >Spiced minced meat (lamb or chicken) molded onto skewers and grilled.</p>
-    </div>
-  </div>
+        ))}
       </div>
     </div>
   );

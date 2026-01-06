@@ -6,7 +6,7 @@ import bgImage from "../../../assets/images/DiningPackage_bg.jpg";
 const packages = [
   {
     title: "Private Dining Experience",
-    price: "From £149 for 2 guests",
+    price: "From £69 for 8 guests",
     features: [
       "3-course bespoke Indian menu",
       "On-site cooking",
@@ -18,7 +18,7 @@ const packages = [
   },
   {
     title: "Small Events & Parties",
-    price: "£18-£22 per person (min. 15 guests)",
+    price: "£99 per person (min. 15 guests)",
     features: [
       "2 starters",
       "2 mains",
@@ -33,7 +33,7 @@ const packages = [
   },
   {
     title: "Chef Buddy VIP Experience",
-    price: "£399 (all-inclusive)",
+    price: "£199 (all-inclusive)",
     features: [
       "5-course premium dining",
       "Live cooking & on-plate presentation",
