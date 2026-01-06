@@ -3,11 +3,11 @@
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { Phone, Mail } from 'lucide-react';
-import emailjs from '@emailjs/browser'; // EmailJS ইমপোর্ট করুন
+import emailjs from '@emailjs/browser'; 
 import bgImg from "../../assets/13.png";
 
 const BookChef: React.FC = () => {
-  const formRef = useRef<HTMLFormElement>(null); // ফরম রেফারেন্সের জন্য
+  const formRef = useRef<HTMLFormElement>(null); 
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -34,7 +34,6 @@ const BookChef: React.FC = () => {
     e.preventDefault();
     const newErrors: Record<string, string> = {};
 
-    // Validation
     if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
@@ -50,13 +49,12 @@ const BookChef: React.FC = () => {
 
     setLoading(true);
 
-    // EmailJS logic
-    // আপনার EmailJS ড্যাশবোর্ড থেকে এই ID গুলো সংগ্রহ করুন
+    // .env.local থেকে ভেরিয়েবলগুলো ব্যবহার করা হয়েছে
     emailjs.sendForm(
-      'mohammad.salim.tech', 
-      'template_2ag99h4', 
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, 
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, 
       formRef.current!, 
-      '0LzVpWyAD60o71Lo-'
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
     )
     .then(() => {
       setLoading(false);
@@ -121,8 +119,11 @@ const BookChef: React.FC = () => {
               <div className="relative">
                 <select name="service" value={formData.service} onChange={handleChange} className={`w-full bg-transparent border-b ${errors.service ? 'border-red-500' : 'border-gray-500'} py-2 text-black outline-none focus:border-[#e67e22] transition-all appearance-none font-light text-sm md:text-base`}>
                   <option value="" className="bg-white text-black">Select Service</option>
-                  <option value="private" className="bg-white text-black">Private Chef</option>
-                  <option value="event" className="bg-white text-black">Event Catering</option>
+                  <option value="Private Chef" className="bg-white text-black">Private Chef</option>
+                  <option value="Event Catering" className="bg-white text-black">Event Catering</option>
+                  <option value="Small Buffet Dine-In" className="bg-white text-black">Small Buffet Dine-In</option>
+                  <option value="Special BBQ Service" className="bg-white text-black">Special BBQ Service</option>
+                  <option value="Cooking Classes" className="bg-white text-black">Cooking Classes</option>
                 </select>
                 {errors.service && <span className="absolute left-0 -bottom-5 text-red-600 text-[10px] font-medium">{errors.service}</span>}
               </div>
