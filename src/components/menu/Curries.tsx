@@ -1,100 +1,130 @@
-import Image from "next/image";
-import mutton from "../../assets/images/Mutton_si.jpg";
-import tikka from "../../assets/images/Chikken_tikka.jpg";
-import poneer from "../../assets/images/Poneer_tikka.jpg";
-import dal from "../../assets/images/Spicy_dal.jpg";
-import lamb from "../../assets/images/Spicy_lamb.jpg";
-import butter from "../../assets/images/Butter_chicken.jpg";
+import React from "react";
 
-export default function Curries() {
-  const dishes = [
+export default function DetailedMenu() {
+  const menuData = [
     {
-      id: 1,
-      name: "Mutton Leg Roast",
-      image: mutton,
-      desc: "Slow-cooked in yogurt, mango chutney and herbs with bold spices.",
-      customClass: "lg:h-[456px] lg:row-span-2",
+      category: "STARTERS",
+      items: [
+        { name: "SAMOSA / SAMOSA CHAAT", desc: "(Meat or Veg)" },
+        { name: "PAKORA", desc: "(Chicken, Vegetables or Mixed)" },
+        { name: "VIRAL DONER KEBAB", desc: "Chef's special trend" },
+        { name: "DESI WINGS / HOT FLAME WINGS", desc: "" },
+        { name: "MURGH CHATT", desc: "" },
+        { name: "BUTTERY CHICKEN DRUMSTICKS", desc: "" },
+        { name: "POTATO CASHEW-NUT ROLL", desc: "" },
+        { name: "LAJAWAB ROAST POTATOES", desc: "" },
+      ],
     },
     {
-      id: 2,
-      name: "Chicken Tikka Masala",
-      image: tikka,
-      desc: "Marinated chicken cooked in mild flavoured sauce with fresh herbs and spices.",
-      customClass: "lg:h-[270px]",
+      category: "TANDOORI SPECIALITIES",
+      items: [
+        { name: "CHICKEN TIKKA", desc: "Boneless chicken marinated in yogurt & medium spices." },
+        { name: "TANDOORI KING PRAWNS", desc: "Marinated with fresh herbs and spices." },
+        { name: "CHICKEN SASLIK", desc: "Marinated in ginger and mustard, charcoal roasted." },
+        { name: "HARIYALI / MALAI KEBAB", desc: "Chef Buddy Special" },
+      ],
     },
     {
-      id: 3,
-      name: "Paneer Tikka Masala",
-      image: poneer,
-      desc: "Marinated paneer cooked in mild flavoured sauce with fresh herbs and spices.",
-      customClass: "lg:h-[456px] lg:row-span-2",
+      category: "CHEF BUDDY SPECIALITIES",
+      items: [
+        { name: "BUTTER CHICKEN (MURGH MAKHANI)", desc: "Rich and creamy mild sauce." },
+        { name: "MEHBOOBA CHICKEN", desc: "Charcoaled chicken with capsicums, tomatoes & cream." },
+        { name: "MANGO CHICKEN", desc: "Cooked with mango, mild spices and fresh cream." },
+        { name: "CHICKEN SILSILAY", desc: "Hot spicy dish with coconut, lemon & chilli." },
+        { name: "RAJA BABU", desc: "Lamb cooked with spiced potatoes, medium hot." },
+        { name: "LAMB KALO BHUNA", desc: "Traditional slow-cooked dark lamb curry." },
+      ],
     },
     {
-      id: 4,
-      name: "Spicy Dal",
-      image: dal,
-      desc: "Lentils cooked in mild flavoured sauce with fresh herbs and spices.",
-      customClass: "lg:h-[506px] lg:row-span-2 order-last lg:order-none",
-    },
-    {
-      id: 5,
-      name: "Spicy Lamb Curry",
-      image: lamb,
-      desc: "Tender pieces of lamb cooked with fresh green chilli, garlic, and peppers.",
-      customClass: "lg:h-[322px]",
-    },
-    {
-      id: 6,
-      name: "Butter Chicken",
-      image: butter,
-      desc: "Charcoaled chicken marinated with onions, capsicums, and cream.",
-      customClass: "lg:h-[322px]",
+      category: "BIRIYANI & CLASSICS",
+      items: [
+        { name: "CHEF BUDDY HANDI BIRIYANI", desc: "Lamb or Beef" },
+        { name: "KASHMIRI KORMA", desc: "Cooked with fruit, cream and special gravy." },
+        { name: "LAMB/CHICKEN CHILLI GARLIC", desc: "Cooked with fresh green chilli & garlic." },
+      ],
     },
   ];
 
   return (
-    <div className="bg-white pb-20">
-      <h1 className="text-center text-3xl font-bold p-12 mt-8" style={{ fontFamily: "'Alata', sans-serif" }}>
-        Curries & Mains
-      </h1>
+    <div className="min-h-screen bg-[#0A0A0A] text-[#D4AF37] py-16 px-4 font-serif">
+      {/* Container with Gold Border Effect */}
+      <div className="max-w-5xl mx-auto border-2 border-[#D4AF37]/30 p-4 md:p-10 relative bg-[#0D0D0D] shadow-2xl">
+        
+        {/* Top Decorative Corners */}
+        <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-[#D4AF37]"></div>
+        <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-[#D4AF37]"></div>
 
-      <div className="grid gap-6 grid-cols-2 lg:grid-cols-3 max-w-[1416px] mx-auto px-4 auto-rows-auto">
-        {dishes.map((item) => (
-          <div key={item.id} className={`flex flex-col lg:block ${item.customClass}`}>
-            {/* Image Container */}
-            <div className="relative rounded-2xl overflow-hidden group h-[188px] lg:h-full w-full">
-              <Image
-                src={item.image}
-                alt={item.name}
-                fill
-                className="object-cover transition-transform duration-700 lg:group-hover:scale-110"
-              />
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <p className="tracking-[0.5em] text-xs uppercase mb-2 text-[#D4AF37]/80">Chef Buddy Presents</p>
+          <h1 className="text-5xl md:text-7xl font-bold mb-4 playfair tracking-tight text-white">MENU</h1>
+          <div className="flex items-center justify-center gap-4">
+            <div className="h-[1px] w-20 bg-[#D4AF37]/40"></div>
+            <span className="text-xl italic">Authentic Indian Cuisine</span>
+            <div className="h-[1px] w-20 bg-[#D4AF37]/40"></div>
+          </div>
+        </div>
 
-              {/* Overlay: Only on Large Screens (lg) */}
-              <div className="hidden lg:flex absolute inset-0 bg-black/10 group-hover:bg-black/40 transition-all duration-500 items-center justify-center">
-                <div className="absolute left-1/2 -translate-x-1/2 bottom-6 w-[327px] h-[141px] p-6 rounded-[50px] bg-black/60 backdrop-blur-md flex flex-col items-center justify-center text-center text-white opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                  <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Alata', sans-serif" }}>
-                    {item.name}
-                  </h3>
-                  <p className="text-sm text-gray-200 line-clamp-2" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-                    {item.desc}
-                  </p>
+        {/* Menu Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+          {menuData.map((section, idx) => (
+            <div key={idx} className="space-y-6">
+              <h2 className="text-2xl font-bold border-b border-[#D4AF37]/20 pb-2 mb-6 tracking-widest text-white uppercase italic">
+                {section.category}
+              </h2>
+              {section.items.map((item, i) => (
+                <div key={i} className="group cursor-default">
+                  <div className="flex justify-between items-baseline gap-2">
+                    <h3 className="text-lg font-semibold group-hover:text-white transition-colors">
+                      {item.name}
+                    </h3>
+                    <div className="flex-1 border-b border-dotted border-[#D4AF37]/30"></div>
+                    <span className="text-sm">★</span>
+                  </div>
+                  {item.desc && (
+                    <p className="text-xs text-gray-500 mt-1 italic font-sans uppercase tracking-tighter">
+                      {item.desc}
+                    </p>
+                  )}
                 </div>
+              ))}
+            </div>
+          ))}
+
+          {/* Special Side Section (Veg & Sides) */}
+          <div className="md:col-span-2 mt-10 p-8 border border-[#D4AF37]/10 bg-black/40 rounded-sm">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <h4 className="font-bold mb-3 text-white underline decoration-[#D4AF37]">RICE & BREADS</h4>
+                <p className="text-sm text-gray-400">Pilau, Mughali, Special Fried Rice, Garlic Naan, Paratha</p>
+              </div>
+              <div>
+                <h4 className="font-bold mb-3 text-white underline decoration-[#D4AF37]">DESSERTS</h4>
+                <p className="text-sm text-gray-400">Sticky Mango Rice, Rice Pudding, Gajar Halwa, Jorda Rice</p>
+              </div>
+              <div>
+                <h4 className="font-bold mb-3 text-white underline decoration-[#D4AF37]">ACCOMPANIMENTS</h4>
+                <p className="text-sm text-gray-400">Raita, Fruit Salad, Cashew-nut Salad, Mixed Chutneys</p>
               </div>
             </div>
-
-            {/* Mobile Text: Only visible below 'lg' */}
-            <div className="mt-3 text-center lg:hidden">
-              <h3 className="text-sm font-bold text-gray-800" style={{ fontFamily: "'Alata', sans-serif" }}>
-                {item.name}
-              </h3>
-              <p className="text-[10px] text-gray-500 leading-tight mt-1" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
-                {item.desc}
-              </p>
-            </div>
           </div>
-        ))}
+        </div>
+
+        {/* Footer info */}
+        <div className="mt-20 text-center border-t border-[#D4AF37]/20 pt-10">
+          <p className="text-sm tracking-widest mb-4">EDINBURGH & SURROUNDINGS (50 MILES)</p>
+          <div className="flex flex-wrap justify-center gap-6 text-sm font-sans font-bold">
+            <span className="bg-[#D4AF37] text-black px-4 py-1 rounded-full">📞 +44 7833-620181</span>
+            <span className="border border-[#D4AF37] px-4 py-1 rounded-full italic">Customised Menus Available</span>
+          </div>
+        </div>
+
+        {/* Bottom Decorative Corners */}
+        <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-[#D4AF37]"></div>
+        <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-[#D4AF37]"></div>
       </div>
+      
+      <p className="text-center mt-10 text-gray-600 text-xs">© 2026 CHEF BUDDY • FINE DINING EXPERIENCE</p>
     </div>
   );
 }

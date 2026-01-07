@@ -20,8 +20,7 @@ Menus are fully customizable to suit your taste, event, and dietary needs."
             </CommonBanner>
             
           <Curries></Curries>
-          <Starters></Starters>
-          <Desserts></Desserts>
+          
           <BookChef></BookChef>
         </div>
     )
