@@ -1,12 +1,13 @@
 import DiningPackage from "@/components/Home/DiningPackage/DiningPackage";
 import Services from "@/components/Home/service/service";
 import Signature from "@/components/Home/SignatureDishes/SignatureDishes";
-import Curries from "@/components/menu/Curries";
+
 import CommonBanner from "@/components/shared/CommonBanner";
 import heroImg from "../../assets/images/MenuBanner.jpg";
 import Starters from "@/components/menu/Starters";
 import Desserts from "@/components/menu/Deserts";
 import BookChef from "@/components/shared/BookChef";
+import DetailedMenu from "@/components/menu/Curries";
 export default function MenuPage(){
     return (
         <div>
@@ -19,7 +20,7 @@ Menus are fully customizable to suit your taste, event, and dietary needs."
 
             </CommonBanner>
             
-          <Curries></Curries>
+         <DetailedMenu></DetailedMenu>
           
           <BookChef></BookChef>
         </div>
