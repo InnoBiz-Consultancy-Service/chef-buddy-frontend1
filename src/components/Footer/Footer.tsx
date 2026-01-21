@@ -76,7 +76,7 @@ const Footer = () => {
             <div className="space-y-8" style={{ fontFamily: "'Nunito Sans', sans-serif", fontSize: "18px", lineHeight: "32px" }}>
               <div>
                 <h3 className="font-bold mb-4" style={{ fontFamily: "'Alata', sans-serif" }}>Address</h3>
-                <p className="text-gray-400 leading-relaxed max-w-[200px]">45 Kingsway Street, London, WC2B 6PF, United Kingdom</p>
+                <p className="text-gray-400 leading-relaxed max-w-[200px]">3 Niddrie Marischal Grove, Edinburgh, Midlothian, EH16 4LD</p>
               </div>
               <div>
                 <h3 className="font-bold mb-4" style={{ fontFamily: "'Alata', sans-serif" }}>Phone</h3>
@@ -94,7 +94,7 @@ const Footer = () => {
               <a href="https://instagram.com" target="_blank" className="text-white hover:text-[#F39C12] transition text-xl"><FaInstagram /></a>
               <a href="https://linkedin.com" target="_blank" className="text-white hover:text-[#F39C12] transition text-xl"><FaLinkedin /></a>
               <a href="https://youtube.com" target="_blank" className="text-white hover:text-[#F39C12] transition text-xl"><FaYoutube /></a>
-              <a href="https://pinterest.com" target="_blank" className="text-white hover:text-[#F39C12] transition text-xl"><FaPinterest /></a>
+              
             </div>
           </div>
         </div>

@@ -7,6 +7,13 @@ interface HeroProps {
 }
 
 export default function CommonBanner({ title, description, imageUrl }: HeroProps) {
+  const scrollToContact = (e:React.MouseEvent)=>{
+    e.preventDefault();
+    const element = document.getElementById('book-chef');
+    if(element){
+      element.scrollIntoView({behavior:'smooth'})
+    }
+  }
   return (
     <section className="relative min-h-screen bg-black text-white w-full overflow-hidden">
       {/* Mobile View Background */}
@@ -50,7 +57,9 @@ export default function CommonBanner({ title, description, imageUrl }: HeroProps
               </p>
 
               <div className="flex justify-center lg:justify-start">
-                <button className="bg-[#F7931E] hover:bg-[#e07b1a] text-[#353535] font-semibold px-8 py-4 rounded-full transition-colors duration-300 cursor-pointer">
+                <button 
+                onClick={scrollToContact}
+                className="bg-[#F7931E] hover:bg-[#e07b1a] text-[#353535] font-semibold px-8 py-4 rounded-full transition-colors duration-300 cursor-pointer">
                   Book a Consultation
                 </button>
               </div>

@@ -67,14 +67,18 @@ export default function DiningPackage() {
       </div>
 
       {/* Header */}
-      <div className="text-center mb-16 z-20">
-        <h2 className="text-[24px] md:text-[48px] font-semibold text-white mb-4">
-          Dining Packages for Every Occasion
-        </h2>
-        <p className="text-gray-300 text-sm md:text-[16px]">
-          Fine dining, meal prep, events, and more — all crafted personally for you.
-        </p>
-      </div>
+     <div className="text-center mb-16 z-20">
+  <h2 className="text-[24px] md:text-[48px] font-semibold text-white mb-4">
+    Dining Packages for Every Occasion
+  </h2>
+  <p className="text-gray-300 text-sm md:text-[16px]">
+    Fine dining, meal prep, events, and more — all crafted personally for you.
+  </p>
+  
+  <p className="text-gray-400 text-xs md:text-sm mt-2 italic">
+    * Please ensure to book at least 2 weeks in advance.
+  </p>
+</div>
 
       {/* Cards Grid */}
       {/* Cards Grid */}
