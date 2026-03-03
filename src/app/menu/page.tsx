@@ -8,21 +8,19 @@ import Starters from "@/components/menu/Starters";
 import Desserts from "@/components/menu/Deserts";
 import BookChef from "@/components/shared/BookChef";
 import DetailedMenu from "@/components/menu/Curries";
-export default function MenuPage(){
-    return (
-        <div>
-            <CommonBanner
-             title="See Our Flavourful Extended Menu Items"
+export default function MenuPage() {
+  return (
+    <div>
+      <CommonBanner
+        title="See Our Flavourful Extended Menu Items"
         description="Every dish is prepared using traditional techniques, handcrafted spices, and fresh ingredients.
 Menus are fully customizable to suit your taste, event, and dietary needs."
         imageUrl={heroImg.src}
-            >
+      ></CommonBanner>
 
-            </CommonBanner>
-            
-         <DetailedMenu></DetailedMenu>
-          
-          <BookChef></BookChef>
-        </div>
-    )
+      <DetailedMenu></DetailedMenu>
+
+      <BookChef></BookChef>
+    </div>
+  );
 }
