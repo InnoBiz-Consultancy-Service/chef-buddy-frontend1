@@ -60,7 +60,6 @@ export default function Blogs() {
   const [showAll, setShowAll] = useState(false);
 
   // মোবাইলে শুরুতে ৩টি দেখাবে, See More ক্লিক করলে সব দেখাবে
-  const visibleBlogs = showAll ? allBlogs : allBlogs.slice(0, 3);
 
   return (
     <section className="bg-white py-16 px-4 md:py-24">
@@ -107,9 +106,9 @@ export default function Blogs() {
                   style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
                   {blog.description}
                 </p>
-                <button className="text-[#F7931E] font-semibold text-sm underline underline-offset-4 hover:text-[#e07b1a] w-fit">
+                {/* <button className="text-[#F7931E] font-semibold text-sm underline underline-offset-4 hover:text-[#e07b1a] w-fit">
                   Read more
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
